@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Caleb's Casino</title>
+      
+      <style>          
+          header {background-color: Dodgerblue;}
+          body {background-color: grey;}
+          h1 { text-align: center }
+        
+          .info { text-align: center }
+          
+          img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+    </style>
+
+      
+   </head>
+	
+   <header>
+     <h1> Caleb's Casino: CaleBall </h1>     
+   </header>
+
+
+   <body>      
+       <div class="info">
+           
+       <script language = "javascript">
+        var fivenums = [-1, -1, -1, -1, -1];
+        
+        for(var i = 0; i < 5; i++ ) {
+            fivenums[i] = parseInt(Math.floor((Math.random() * 47) + 1) );
+        }
+        
+        fivenums.sort(function(a, b){return a-b});
+        
+        document.write("power ball numbers: ");
+        document.write("<br>");
+
+        for(var i = 0; i <= 4; i++ ) {
+            document.write(" ( ");
+            document.write(fivenums[i]);
+            document.write(" ) ");
+        }
+        
+        document.write("<br>");
+
+        
+        var luckyball = Math.floor((Math.random() * 17) + 1);
+        document.write("Lucky Ball: ");
+        document.write(" ( " + luckyball + " ) " );
+        document.write("<br>");
+        
+        var stringnums = prompt("Enter 5 numbers, with spaces in between", "" );
+        var inputarray = stringnums.split(" ");
+        
+        var usernums = [-1, -1, -1, -1, -1];
+        for(var j = 0; j < 5; j++ ) {
+            usernums[j] = parseInt(inputarray[j], 10 );
+        }
+        
+        usernums.sort(function(a, b){return a-b}); 
+        
+        document.write("your numbers: "); 
+        document.write("<br>");
+   
+        for(var j = 0; j < 5; j++ ) {
+            document.write(" ( ");
+
+            document.write(usernums[j]);
+            document.write(" ) ");
+        }
+        
+        
+        document.write("<br>");
+
+        
+        var userluckyball = parseInt( prompt("Now enter your lucky number") );
+        document.write("your lucky ball: ");
+        document.write(" ( " + userluckyball + " ) " );
+        document.write("<br>");
+
+        var counted = [false, false, false, false, false];
+ 
+        
+        var numright = 0;
+        for( var x = 0; x < 5; x++ ) {
+            for( var y = 0; y < 5; y++ ) {
+                if(usernums[x] == fivenums[y] && counted[y] == false) {
+                    numright++;
+                    counted[y] = true;
+                }
+
+            }
+        }
+        
+        var luckymatch = false;
+        if(userluckyball == luckyball) {
+            luckymatch = true;
+        }
+        document.write("lucky ball matches? " + luckymatch); 
+        document.write("<br>");
+
+        
+        document.write("numbers of matches: " + numright); 
+        document.write("<br>");
+        
+        document.write("Winnings: "); 
+
+        //Code for calculating winnings:
+                
+        if(numright == 5 && luckymatch == true) {
+            document.write("7,000 a week for Life!" ); 
+        }    
+        if(numright == 5 && luckymatch == false) {
+            document.write("25,000 a year for Life!" ); 
+        }    
+        if(numright == 4 && luckymatch == true) {
+            document.write("5,000" ); 
+        }
+        if(numright == 4 && luckymatch == false) {
+            document.write("200" ); 
+        }
+        if(numright == 3 && luckymatch == true) {
+            document.write("150" ); 
+        }
+        if(numright == 3 && luckymatch == false) {
+            document.write("20" ); 
+        }
+        if(numright == 2 && luckymatch == true) {
+            document.write("25" ); 
+        }
+        if(numright == 2 && luckymatch == false) {
+            document.write("3" ); 
+        }
+        if(numright == 1 && luckymatch == true) {
+            document.write("6" ); 
+        }
+        if(numright == 1 && luckymatch == false) {
+            document.write("0" ); 
+        }
+        
+        if(numright == 0 && luckymatch == true) {
+            document.write("4" ); 
+        }
+        
+        if(numright == 0 && luckymatch == false) {
+            document.write("0" ); 
+        }
+        
+        document.write("<br>");
+        document.write("<br>");
+
+
+        
+      </script>
+      
+  </div class="info">
+  
+  <img src = https://unsplash.com/photos/cFhVKxvwDos/download?force=true 
+   height="200"  />
+
+       
+   </body>
+   
+   
+   
+	
+</html>
