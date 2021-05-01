@@ -22,12 +22,12 @@ http.createServer(function (req, res) {
   else if (req.url == "/process")  { 
     res.writeHead(200, {'Content-Type':'text/html'}); 
     res.write ("Process the form<br>"); 
-    pdata = ""; req.on('data', data => {           
+    pdata = ""; req.on('data', data => {
       pdata += data.toString();         });// when complete POST data is received
     
     req.on('end', () => {
       pdata = qs.parse(pdata);
-      res.write ("The name is: "+ pdata);
+      res.write ("The name is: "+ pdata['the_name']);
       res.end();
     });  }  
   
