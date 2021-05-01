@@ -10,7 +10,7 @@ var fs = require('fs');
 http.createServer(function (req, res) {
 
     if (req.url == "/")  {
-      file = 'form.html';
+      file = 'index.html';
       fs.readFile(file, function(err, txt) {
         res.writeHead(200, {'Content-Type': 'text/html'});  
         
