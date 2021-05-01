@@ -27,7 +27,7 @@ http.createServer(function (req, res) {
     
     req.on('end', () => {
       pdata = qs.parse(pdata);
-      res.write ("The name is: "+ pdata['the_name']);
+      res.write ("The name is: "+ pdata);
       res.end();
     });  }  
   
