@@ -9,7 +9,7 @@ var qs = require('querystring');
 http.createServer(function (req, res) {
 
     if (req.url == "/")  {
-      file = 'formpage.html';
+      file = 'index.html';
       fs.readFile(file, function(err, txt) {
         res.writeHead(200, {'Content-Type': 'text/html'});  
         
